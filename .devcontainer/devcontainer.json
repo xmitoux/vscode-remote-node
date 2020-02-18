@@ -4,7 +4,7 @@
 
     // Use 'appPort' to create a container with published ports. If the port isn't working, be sure
     // your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
-    "appPort": [3000],
+    "appPort": [3000, 9005],
 
     // Comment out the next line to run as root instead.
     "remoteUser": "node",
@@ -13,20 +13,10 @@
     // You can edit these settings after create using File > Preferences > Settings > Remote.
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
-        "eslint.validate": [
-          "javascript",
-          "javascriptreact",
-          {
-            "language": "vue",
-            "autoFix": true
-          }
-        ],
-        "eslint.autoFixOnSave": true,
-        "vetur.format.defaultFormatter.html": "prettier",
     },
 
     // Specifies a command that should be run after the container has been created.
-    // "postCreateCommand": "yarn install",
+    "postCreateCommand": "yarn global add firebase-tools",
 
     // Add the IDs of extensions you want installed when the container is created in the array below.
     "extensions": [
